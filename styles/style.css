@@ -1,0 +1,567 @@
+:root{
+  --first: #ECEFF1;
+  --second: #6D4C41;
+  --third: #A1887F;
+  --text: #263238;
+  --white: #ffff;
+  --black: #000000;
+  --grey: #ccced0;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+
+  /*Para trabajar rems como pixeles*/
+  font-size: 62.5%;
+
+  /*Scroll*/
+  /*scroll-snap-type: y mandatory;*/
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+  font-size: 1.8rem;
+  font-family: 'Quicksand', sans-serif; 
+  color: var(--black);
+}
+
+h1{
+  font-size: 4rem;
+}
+h2{
+  font-size: 3.2rem;
+}
+h3{
+  font-size: 2.8rem;
+  color: var(--black);
+  font-weight: 900;
+}
+h4{
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+
+.container{
+  max-width: 120rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.img{
+  max-width: 100%;
+}
+
+.no_margin{
+  margin: 0;
+}
+
+.no_padding{
+  padding: 0;
+}
+
+.text_aling{
+  text-align: center;
+}
+
+
+.button{
+  text-decoration: none;
+  color: var(--black);
+  display: inline-block;
+  color: var(--white);
+  padding: 1rem 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.button_first{
+  background-color: var(--grey);
+  color: var(--black);
+}
+
+.button_first:hover{
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.button_second{
+  background-color: var(--third);
+}
+
+.button_second:hover{
+  background-color: var(--second);
+}
+
+/*Header*/
+.header{
+  height: 65rem;
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/img/heroBaner.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-top: 5rem;
+  color: var(--white);
+
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+.logo{
+  font-weight: 200;
+}
+.logo_bold{
+  font-weight: 500;
+}
+.link{
+  text-decoration: none;
+  color: var(--white);
+}
+.link:hover{
+  color: var(--third);
+}
+.principalNav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.hero{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rem 0rem;
+}
+
+/*
+@media (max-width:786px){
+  .principalNav{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .link{
+    padding: 1rem;
+  }
+  .phrase_first{
+    text-align: center;
+  }
+}
+*/
+
+/*--------INDEX.HTML--------*/
+
+/*Main*/
+
+.blog{
+  line-height: 3rem;
+}
+
+.principal_content{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 4rem;
+}
+
+.blog{
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.article_img_coffeeBeans,
+.article_img_coffeeBenefits,
+.article_img_coffeeBussines{
+  height: 60rem;
+}
+
+.article{
+  border-bottom: 1px solid var(--text);
+  margin-bottom: 4rem;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.article_info{
+  text-align: justify;
+}
+
+.article:last-of-type{
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+
+
+/*Aside Bar*/
+.icon_loc{
+  margin: 1.3rem;
+  display: grid;
+  grid-template-columns: repeat(1, 20% 80%);
+  align-items: center;
+}
+
+.coffeePlaces{
+  list-style: none;
+}
+
+.widget{
+  border-bottom: 1px solid var(--grey);
+  margin-bottom: 1rem;
+}
+
+.widget:last-of-type{
+  border-bottom: none;
+  margin-bottom: 0rem;
+}
+
+.tiempo_lectura{
+  color: var(--text);
+}
+
+
+
+/*Footer*/
+.footer{
+  margin-top: 5rem;
+  padding: 2rem;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.footer_div{
+  margin: 0rem 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+
+
+/*Mobile Version*/
+@media(max-width:768px){
+
+  /*Header*/
+  .principalNav{
+    display: grid;
+    row-gap: 1rem;
+    text-align: center;
+  }
+  .hero{
+    display: grid;
+    row-gap: 1rem;
+    text-align: center;
+  }
+
+  /*Blog*/
+  .principal_content{
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: auto;
+    text-align: center;
+  }
+  .article_img_coffeeBeans,
+  .article_img_coffeeBenefits,
+  .article_img_coffeeBussines{
+    height: 25rem;
+  }
+  
+  /*Sidebar*/
+  .sidebar{
+    margin-top: 5rem;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+  .widget{
+    margin: 2.5rem 0;
+  }
+  .icon_loc{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    margin-top: 2rem;
+  }
+  
+  /*Footer*/
+  .footer_div{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: none;
+    text-align: center;
+    justify-content: center;
+    row-gap: 1rem;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+
+
+/*--------ABOUTUS.HTML--------*/
+
+.container_aboutUs{
+  max-width: 120rem;
+  width: 90%;
+  margin: 10rem auto;
+}
+
+.img_aboutUs{
+  max-width: 100%; /*Me asegura que mi imagen no exceda el ancho de mi container*/
+  height: auto; /*Mantengo la imagen en proporcion*/
+}
+
+.grid_aboutUs{
+  margin: 8rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5rem;
+}
+
+.info_aboutUs{
+  text-align: justify;
+  line-height: 3rem;
+  font-size: 2rem;
+}
+
+@media (max-width:768px){
+  .grid_aboutUs{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: none;
+    margin-top: 4rem;
+  }
+  .info_aboutUs{
+    text-align: center;
+  }
+  .text_aling{
+    margin: 0%;
+  }
+}
+
+
+
+
+/*COFFEEPLACES.HTML*/
+
+/*VERSION ANTERIOR
+.bestCoffeePlaces{
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  text-align: center;
+  margin: 10rem 0;
+  row-gap: 1rem;
+}*/
+
+.bestCoffeePlaces {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* se adapta automáticamente */
+  gap: 2rem;
+  text-align: center;
+  margin: 10rem 0;
+}
+
+
+.title_coffeePlaces{
+  grid-column: 1/4;
+}
+
+.amaria_div{
+  grid-row: 2/3;
+}
+
+.alchemy_div{
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+
+.coffeePlaces_div{
+  padding: 0 3rem;
+}
+
+.link_location{
+  text-decoration: none;
+  color: var(--black);
+}
+
+.link_location:hover{
+  text-decoration: none;
+  color: var(--second);
+}
+
+.img_coffeePlace{
+  max-width: 40rem;
+  height: auto;
+  border-radius: 50%;
+}
+
+
+/*Monterrey Obispado Imagenes*/
+
+.img_monterrey,
+.img_obispado{
+  max-width: 100%;
+  height: auto;
+}
+
+.monterrey_div{
+  grid-row: 3/4;
+  grid-column: 2/4;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem;
+}
+
+.obispado_div{
+  grid-column: 1/2;
+  grid-row: 4/5;
+  margin: 3rem;
+}
+
+/*VERISON ANTERIOR
+.coffeePlaces_cont{
+  padding: 0 3rem;
+  display: grid;
+  grid-template-rows: 12.5% 42.25% 42.25% 3%;
+  line-height: 3rem;
+}*/
+.coffeePlaces_cont {
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.coffeeInfo{
+  line-height: 3rem;
+}
+
+@media (max-width:768px){
+  .bestCoffeePlaces{
+    display: flex;
+    flex-direction: column;
+  }
+  .coffeePlaces_cont{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+    gap: 2rem;
+  }
+  .img_monterrey,
+  .img_obispado{
+    display: none;
+  }
+  
+}
+
+
+
+
+/*------GRANDOSCAFE.HTML-------*/
+
+.headerArticle{
+  border-bottom: 1px solid var(--grey);
+}
+
+.articleInfo{
+  text-align: justify;
+  line-height: 3rem;
+}
+
+.article_div{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 4rem;
+}
+
+.pie_foto{
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.headerArticle{
+  grid-column: 1/4;
+}
+
+.parrafo1{
+  grid-row: 2/3;
+  grid-column: 1/4;
+  
+}
+
+.parrafo2{
+  grid-row: 4/5;
+  grid-column: 1/3;
+
+}
+
+.parrafo3{
+  grid-row: 5/6;
+  grid-column: 2/4;
+
+}
+
+.parrafo4{
+  grid-row: 6/7;
+  grid-column: 1/4;
+}
+
+.parrafo5{
+  grid-row: 7/8;
+  grid-column: 1/3;
+}
+
+.imgArticle{
+  max-height: 40rem;
+  width: auto;
+
+}
+.imgArticle_divgA{
+  grid-row: 4/5;
+  grid-column: 3/4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.imgArticle_divgR{
+  grid-row: 5/6;
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgArticle_divLatte{
+  grid-row: 7/8;
+  grid-column: 3/4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width:768px){
+  .article_div{
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 0;
+  }
+  .articleInfo{
+    text-align: center;
+  }
+  
+}
